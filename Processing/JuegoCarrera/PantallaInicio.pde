@@ -15,6 +15,7 @@ class PantallaInicio {
     image(imagen, this.posicion.x, this.posicion.y,845,800);
     image(auto, width/2-55, 500, 110, 110);
     image(auto2, 700, 500, 110,110);
+    image(auto2, 50, 500, 110,110);
     fill(#FFF303);
     textFont(tipografia);
     textAlign(CENTER);
