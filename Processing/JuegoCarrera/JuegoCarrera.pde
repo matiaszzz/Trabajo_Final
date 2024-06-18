@@ -1,4 +1,4 @@
-private PantallaInicio pi;
+private PantallaInicio pi; 
 void setup(){
   size(845,800);
   pi = new PantallaInicio(new PVector (0,0));
