@@ -1,12 +1,11 @@
-class AutoEnemigo{ // Se crea la clase AutoEnemigo
+class AutoEnemigo extends GameObject{ // Se crea la clase AutoEnemigo
 //Se definen sus atributos 
-  private PVector posicion;
   private PImage imagen;
   private PVector velocidad;
   
   //Contructor parametrizado
   public AutoEnemigo(PVector posicion, PVector velocidad){
-    this.posicion=posicion;
+    super(posicion);
     this.velocidad=velocidad;
   }
   

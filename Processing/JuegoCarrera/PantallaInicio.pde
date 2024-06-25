@@ -1,12 +1,11 @@
-class PantallaInicio { //Se crea la clase PantallaInicio que es la pantalla de inicio del juego
+class PantallaInicio extends GameObject{ //Se crea la clase PantallaInicio que es la pantalla de inicio del juego
 //Se definen sus atributos
   private PFont tipografia;
-  private PVector posicion;
   private PImage imagen, auto, auto2;
 
 //Constructor parametrizadp
   public PantallaInicio(PVector posicion) {
-    this.posicion=posicion;
+    super(posicion);
     this.tipografia = createFont("Crang.ttf", 95);
     this.imagen = loadImage("fondo.png");
     this.auto = loadImage("autito.png");
