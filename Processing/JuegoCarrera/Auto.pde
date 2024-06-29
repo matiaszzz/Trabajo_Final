@@ -1,4 +1,4 @@
-class Auto extends GameObject{ //Se crea la clase Auto
+class Auto extends GameObject implements IVisualizable{ //Se crea la clase Auto
 //Se definen sus atributos
   private PVector velocidad;
   private PImage imagen;

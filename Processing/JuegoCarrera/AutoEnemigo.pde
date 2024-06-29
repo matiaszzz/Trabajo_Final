@@ -1,4 +1,4 @@
-class AutoEnemigo extends GameObject{ // Se crea la clase AutoEnemigo
+class AutoEnemigo extends GameObject implements IVisualizable{ // Se crea la clase AutoEnemigo
 //Se definen sus atributos 
   private PImage imagen;
   private PVector velocidad;

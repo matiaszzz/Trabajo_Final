@@ -1,4 +1,4 @@
-class Escenario extends GameObject{ //Se crea la clase Escenario donde se muestra la pantalla del juego
+class Escenario extends GameObject implements IVisualizable{ //Se crea la clase Escenario donde se muestra la pantalla del juego
 //Se definen sus atributos
   private PImage ruta,escena;
 

@@ -1,4 +1,4 @@
-class PantallaInicio extends GameObject{ //Se crea la clase PantallaInicio que es la pantalla de inicio del juego
+class PantallaInicio extends GameObject implements IVisualizable{ //Se crea la clase PantallaInicio que es la pantalla de inicio del juego
 //Se definen sus atributos
   private PFont tipografia;
   private PImage imagen, auto, auto2;
