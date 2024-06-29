@@ -1,4 +1,5 @@
 private PantallaInicio pi; 
+private Escenario e;
 private int estado;
 
 void setup(){
@@ -15,6 +16,13 @@ void draw(){
       break;
     }
     case MaquinaEstados.JUGANDO:{
+      e.display();
     }
+  }
+}
+public void keyPressed(){
+  if(keyCode == ENTER && (estado == MaquinaEstados.INICIO || estado == MaquinaEstados.JUGANDO)){
+        estado = MaquinaEstados.JUGANDO;
+    e = new Escenario(new PVector(-126, 0));
   }
 }
