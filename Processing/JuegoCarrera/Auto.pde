@@ -18,8 +18,26 @@ class Auto extends GameObject implements IVisualizable { //Se crea la clase Auto
   }
 
   //Operacion para mover el Auto
-  public void mover() {
+  public void mover(int direccion) {
+    if (direccion==0) {
+      this.posicion.x-=this.velocidad.x*Time.getDeltaTime(frameRate);
+    }
+    if (direccion==1) {
+      this.posicion.x+=this.velocidad.x*Time.getDeltaTime(frameRate);
+    }
+    if (direccion==2) {
+      this.posicion.y-=this.velocidad.y*Time.getDeltaTime(frameRate);
+    }
+    if (direccion==3) {
+      this.posicion.y+=this.velocidad.y*Time.getDeltaTime(frameRate);
+    }
   }
-
-
+  boolean obtenerMoneda(PVector moneda) {
+    float d = dist(posicion.x, posicion.y, moneda.x, moneda.y);
+    if (d<20) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

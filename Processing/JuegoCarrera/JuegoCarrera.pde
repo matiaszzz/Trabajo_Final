@@ -25,6 +25,10 @@ void draw() {
     {
       e.display();
       m.display();
+      m.mover();
+      if (a.obtenerMoneda(m.getPosicion())) {
+        m = new Moneda(new PVector(int(random(420, 500)), int(random(0, 0))), new PVector(0, 300));
+      }
       a.display();
     }
   }
@@ -33,5 +37,17 @@ public void keyPressed() {
   if (keyCode == ENTER && (estado == MaquinaEstados.INICIO || estado == MaquinaEstados.JUGANDO)) {
     estado = MaquinaEstados.JUGANDO;
     e = new Escenario(new PVector(-126, 5));
+  }
+  if (key=='a') {
+    a.mover(0);
+  }
+  if (key=='d') {
+    a.mover(1);
+  }
+  if (key=='w') {
+    a.mover(2);
+  }
+  if (key=='s') {
+    a.mover(3);
   }
 }
