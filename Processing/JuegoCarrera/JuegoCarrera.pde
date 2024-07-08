@@ -3,10 +3,12 @@ import processing.sound.*;
 private Minim minim;
 private AudioPlayer player;
 private AudioPlayer coin;
+private AudioPlayer inicio;
 private PantallaInicio pi;
 private Escenario e;
 private Moneda m;
 private Auto a;
+private SpawnerAutos sp;
 private int estado;
 
 void setup() {
@@ -16,8 +18,10 @@ void setup() {
   m = new Moneda(new PVector(int(random(200, 500)), int(random(0, 0))), new PVector(0, 200));
   estado = MaquinaEstados.INICIO;
   minim = new Minim(this);
+  sp = new SpawnerAutos();
   player = minim.loadFile("tema.mp3");
   coin = minim.loadFile("coin.mp3");
+  inicio = minim.loadFile("inicio.mp3");
   frameRate(90);
 }
 
@@ -25,13 +29,15 @@ void draw() {
   //pi.display();
   switch (estado) {
   case MaquinaEstados.INICIO:
-    {
+    { 
+      inicio.play();
       pi.display();
       break;
     }
   case MaquinaEstados.JUGANDO:
     {
       e.display();
+      sp.generarAutos();
       m.display();
       m.mover();
       if (a.obtenerMoneda(m.getPosicion())) {
@@ -46,6 +52,7 @@ void draw() {
 public void keyPressed() {
   if (keyCode == ENTER && (estado == MaquinaEstados.INICIO || estado == MaquinaEstados.JUGANDO)) {
     estado = MaquinaEstados.JUGANDO;
+    inicio.pause();
     e = new Escenario(new PVector(-126, 5));
     player.play();
   }
