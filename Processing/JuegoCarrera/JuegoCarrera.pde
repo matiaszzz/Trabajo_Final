@@ -52,6 +52,11 @@ void draw() {
       text("SCORE:  "+ a.getScore(), 750, 50);
       break;
     }
+    case MaquinaEstados.PERDIENDO:
+    {
+      player.pause();
+      pi.displayGameOver();
+    }
   }
 }
 public void keyPressed() {
