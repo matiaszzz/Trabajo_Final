@@ -3,6 +3,7 @@ class Auto extends GameObject implements IVisualizable { //Se crea la clase Auto
   private PVector velocidad;
   private PImage imagen;
   private int tamanio;
+  private int score;
 
   //Se crea el constructor parametrizado
   public Auto(PVector posicion, PVector velocidad, int tamanio) {
@@ -10,6 +11,7 @@ class Auto extends GameObject implements IVisualizable { //Se crea la clase Auto
     this.velocidad=velocidad;
     this.tamanio=tamanio;
     this.imagen=loadImage("autos1.png");
+    this.score=0;
   }
 
   //Operacion display para dibujar el Auto
@@ -35,6 +37,7 @@ class Auto extends GameObject implements IVisualizable { //Se crea la clase Auto
   boolean obtenerMoneda(PVector moneda) {
     float d = dist(posicion.x, posicion.y, moneda.x, moneda.y);
     if (d<20) {
+      score++;
       return true;
     } else {
       return false;
@@ -49,5 +52,8 @@ class Auto extends GameObject implements IVisualizable { //Se crea la clase Auto
         println("no colisiono");
       }
     }
+  }
+  public int getScore() {
+    return this.score;
   }
 }

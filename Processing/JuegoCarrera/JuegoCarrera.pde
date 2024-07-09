@@ -29,7 +29,7 @@ void draw() {
   //pi.display();
   switch (estado) {
   case MaquinaEstados.INICIO:
-    { 
+    {
       inicio.play();
       pi.display();
       break;
@@ -47,6 +47,10 @@ void draw() {
       }
       a.display();
       a.colisionar(sp);
+      fill(0);
+      textSize(30);
+      text("SCORE:  "+ a.getScore(), 750, 50);
+      break;
     }
   }
 }
