@@ -46,6 +46,7 @@ void draw() {
         m = new Moneda(new PVector(int(random(200, 500)), int(random(0, 0))), new PVector(0, 200));
       }
       a.display();
+      a.colisionar(sp);
     }
   }
 }

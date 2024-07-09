@@ -40,4 +40,14 @@ class Auto extends GameObject implements IVisualizable { //Se crea la clase Auto
       return false;
     }
   }
+  public void colisionar(SpawnerAutos sp) {
+    for (AutoEnemigo ae : sp.getAutos()) {
+      float distanciaEntreAutos = this.posicion.dist(ae.getPosicion());
+      if (distanciaEntreAutos<70) {
+        println("colisiono");
+      } else {
+        println("no colisiono");
+      }
+    }
+  }
 }
